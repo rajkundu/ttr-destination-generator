@@ -334,7 +334,7 @@ const numPages = Math.ceil(cards.length / itemsPerPage);
 
 // State variables
 let currentPageNum = 0;
-let cardInfoVisible = true;
+let cardInfoVisible = false;
 
 const cardInfoContainer = document.querySelector("#cardInfo");
 function renderCardInfo(cards) {

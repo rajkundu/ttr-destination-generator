@@ -1,7 +1,7 @@
 body {
     text-align: center;
     font-family: sans-serif;
-    font-size: 1.3em;
+    font-size: clamp(1em, 3vw, 1.8em);
 }
 #cardInfo {
     margin-top: 1.5em;
@@ -10,12 +10,24 @@ body {
 .cardContainer p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    vertical-align: middle;
 }
 .cardContainer input[type=checkbox] {
-    transform: scale(1.5);
-    margin-left: 0.75em;
-    margin-right: 0.75em;
+    height: clamp(1em, 3vw, 1.8em);
+    width: clamp(1em, 3vw, 1.8em);
+    vertical-align: middle;
+    margin-right: clamp(0.5em, 1.5vw, 0.9em);
 }
+.cardContainer input[type="checkbox"]:before {
+    width: clamp(1em, 3vw, 1.8em);
+    height: clamp(1em, 3vw, 1.8em);
+}
+.cardContainer input[type="checkbox"]:after {
+    top: -clamp(1em, 3vw, 1.8em);
+    width: clamp(1em, 3vw, 1.8em);
+    height: clamp(1em, 3vw, 1.8em);
+}
+
 #pageNumbers {
     display: inline-block;
     margin-left: 1.5em;

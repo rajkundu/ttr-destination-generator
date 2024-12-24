@@ -1,7 +1,7 @@
 body {
     text-align: center;
     font-family: sans-serif;
-    font-size: clamp(1em, 3vw, 1.8em);
+    font-size: clamp(1.1em, 4vw, 1.8em);
 }
 #cardInfo {
     margin-top: 1.5em;
@@ -13,21 +13,20 @@ body {
     vertical-align: middle;
 }
 .cardContainer input[type=checkbox] {
-    height: clamp(1em, 3vw, 1.8em);
-    width: clamp(1em, 3vw, 1.8em);
+    height: clamp(1.1em, 4vw, 1.8em);
+    width: clamp(1.1em, 4vw, 1.8em);
     vertical-align: middle;
-    margin-right: clamp(0.5em, 1.5vw, 0.9em);
+    margin-right: clamp(0.55em, 2vw, 0.9em);
 }
 .cardContainer input[type="checkbox"]:before {
-    width: clamp(1em, 3vw, 1.8em);
-    height: clamp(1em, 3vw, 1.8em);
+    width: clamp(1.1em, 4vw, 1.8em);
+    height: clamp(1.1em, 4vw, 1.8em);
 }
 .cardContainer input[type="checkbox"]:after {
-    top: -clamp(1em, 3vw, 1.8em);
-    width: clamp(1em, 3vw, 1.8em);
-    height: clamp(1em, 3vw, 1.8em);
+    top: -clamp(1.1em, 4vw, 1.8em);
+    width: clamp(1.1em, 4vw, 1.8em);
+    height: clamp(1.1em, 4vw, 1.8em);
 }
-
 #pageNumbers {
     display: inline-block;
     margin-left: 1.5em;

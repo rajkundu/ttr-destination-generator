@@ -359,6 +359,9 @@ function pageButtonCB(event) {
     const end = Math.min(start + itemsPerPage, cards.length);
     renderCardInfo(cards.slice(start, end));
     document.querySelector("#pageNumbers").innerText = `${currentPageNum+1}/${numPages}`;
+
+    // Set background color
+    document.body.style.backgroundColor = colors[currentPageNum % NUM_COLORS];
 }
 
 // Get the container where buttons will be added
@@ -378,6 +381,22 @@ function showHideButtonCB(event) {
     showHideButton.innerText = cardInfoVisible ? "Hide" : "Show";
     cardInfoContainer.style.visibility = cardInfoVisible ? "visible" : "hidden";
 }
+
+function generateDistinctColors(n) {
+    const colors = [];
+    const saturation = 100;
+    const lightness = 50;
+    for (let i = 0; i < n; i++) {
+        const hue = 360 / n * (((i * (n+1)/2 + 1) - 1) % n);
+        const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        colors.push(color);
+    }
+    return colors;
+}
+
+// Usage
+const NUM_COLORS = 5; // since there are up to 5 players, this should suffice
+const colors = generateDistinctColors(NUM_COLORS);
 
 pageButtonCB(null);
 showHideButtonCB(null);

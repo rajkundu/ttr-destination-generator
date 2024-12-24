@@ -335,15 +335,30 @@ const numPages = Math.ceil(cards.length / itemsPerPage);
 // State variables
 let currentPageNum = 0;
 let cardInfoVisible = false;
+let checkboxMap = {};
 
 const cardInfoContainer = document.querySelector("#cardInfo");
 function renderCardInfo(cards) {
     cardInfoContainer.innerHTML = "";
     cards.forEach(card => {
         const [from, to, points] = card;
+        const cardID = `${from}_to_${to}`.replace(/[^a-zA-Z0-9_\-]/g, '');
+
+        const cardContainer = document.createElement('div');
+        cardContainer.id = cardID;
+        cardContainer.classList.add("cardContainer");
+
+        const cb = document.createElement('input');
+        cb.type = "checkbox";
+        cb.checked = cardID in checkboxMap ? checkboxMap[cardID] : false;
+        cb.addEventListener('change', e => checkboxMap[cardID] = e.target.checked);
+        cardContainer.appendChild(cb);
+
         const p = document.createElement('p');
         p.innerHTML = `<b>${from}</b> to <b>${to}</b> (<b>${points}</b> points)`;
-        cardInfoContainer.appendChild(p);
+        p.style.display = "inline-block";
+        cardContainer.appendChild(p);
+        cardInfoContainer.appendChild(cardContainer);
     });
 }
 
@@ -385,7 +400,7 @@ function showHideButtonCB(event) {
 function generateDistinctColors(n) {
     const colors = [];
     const saturation = 100;
-    const lightness = 50;
+    const lightness = 65;
     for (let i = 0; i < n; i++) {
         const hue = 360 / n * (((i * (n+1)/2 + 1) - 1) % n);
         const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;

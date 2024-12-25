@@ -363,9 +363,9 @@ function renderCardInfo(cards) {
 }
 
 function pageButtonCB(event) {
-    if (event != null && event.target == prevPageButton && currentPageNum > 0) {
+    if (event != null && prevPageButton.contains(event.target) && currentPageNum > 0) {
         currentPageNum--;
-    } else if (event != null && event.target == nextPageButton && currentPageNum < numPages-1) {
+    } else if (event != null && nextPageButton.contains(event.target) && currentPageNum < numPages-1) {
         currentPageNum++;
     }
     prevPageButton.disabled = !(currentPageNum > 0);
@@ -390,10 +390,10 @@ showHideButton = document.querySelector("#showHideButton");
 showHideButton.addEventListener('click', showHideButtonCB);
 
 function showHideButtonCB(event) {
-    if (event != null && event.target == showHideButton) {
+    if (event != null && showHideButton.contains(event.target)) {
         cardInfoVisible = !cardInfoVisible;
     }
-    showHideButton.innerText = cardInfoVisible ? "Hide Cards" : "Show Cards";
+    showHideButton.innerHTML = cardInfoVisible ? `<i class="fa-solid fa-eye-slash"></i><p>Hide Cards</p>` : `<i class="fa-solid fa-eye"></i><p>Show Cards</p>`;
     cardInfoContainer.style.visibility = cardInfoVisible ? "visible" : "hidden";
 }
 

@@ -1,49 +1,73 @@
 body {
     text-align: center;
     font-family: sans-serif;
-    font-size: clamp(1.1em, 4vw, 1.8em);
+    font-size: clamp(1.2rem, 4vw, 2rem);
 }
 p {
     margin-top: 0px;
     margin-bottom: 0px;
 }
 button {
-    padding: 0.5em 0.8em;
+    padding: 0.5rem 0.8rem;
+    background: none;
+    border: 1px solid #000;
+    border-radius: 2rem;
 }
+
 #cardInfo {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 .cardContainer p {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     vertical-align: middle;
 }
 .cardContainer input[type=checkbox] {
-    height: clamp(1.1em, 4vw, 1.8em);
-    width: clamp(1.1em, 4vw, 1.8em);
+    height: clamp(1.2rem, 4vw, 2rem);
+    width: clamp(1.2rem, 4vw, 2rem);
     vertical-align: middle;
-    margin-right: clamp(0.55em, 2vw, 0.9em);
+    margin-right: clamp(0.6rem, 2vw, 1rem);
 }
 .cardContainer input[type="checkbox"]:before {
-    width: clamp(1.1em, 4vw, 1.8em);
-    height: clamp(1.1em, 4vw, 1.8em);
+    width: clamp(1.2rem, 4vw, 2rem);
+    height: clamp(1.2rem, 4vw, 2rem);
 }
 .cardContainer input[type="checkbox"]:after {
-    top: -clamp(1.1em, 4vw, 1.8em);
-    width: clamp(1.1em, 4vw, 1.8em);
-    height: clamp(1.1em, 4vw, 1.8em);
+    top: -clamp(1.2rem, 4vw, 2rem);
+    width: clamp(1.2rem, 4vw, 2rem);
+    height: clamp(1.2rem, 4vw, 2rem);
 }
-#pageNumbers {
-    display: inline-block;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
-}
+
 #deckNavigation {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+#pageNumbers {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.pageButton {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    border: none;
+}
+
+#showHideButton {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-size: clamp(0.6rem, 2vw, 1rem);
+    justify-content: center;
+}
+
 #config {
-    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+#showHideButton i {
+    margin-right: 0.5rem;
 }

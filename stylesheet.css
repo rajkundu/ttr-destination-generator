@@ -44,20 +44,44 @@ button {
     vertical-align: middle;
     text-align: left;
 }
-.cardContainer input[type=checkbox] {
+.cardContainer input[type="checkbox"] {
     min-height: 2rem;
     min-width: 2rem;
     vertical-align: middle;
     margin-right: 0.5rem;
+    -webkit-appearance: none; /* Remove default appearance */
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 0.2rem solid #000;
+    border-radius: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
 }
-.cardContainer input[type="checkbox"]:before {
-    min-width: 2rem;
-    min-height: 2rem;
+.cardContainer input[type="checkbox"]:checked {
+    background-color: transparent;
+    border-color: #000;
 }
-.cardContainer input[type="checkbox"]:after {
-    top: -2rem;
-    min-width: 2rem;
-    min-height: 2rem;
+.cardContainer input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+.cardContainer input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
 }
 
 #deckNavigation {

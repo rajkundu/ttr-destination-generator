@@ -357,6 +357,10 @@ function renderCardInfo(cards) {
         const p = document.createElement('p');
         p.innerHTML = `<b>${from}</b> to <b>${to}</b> (<b>${points}</b> points)`;
         p.style.display = "inline-block";
+        p.addEventListener('click', e => {
+            cb.checked = !cb.checked;
+            checkboxMap[cardID] = cb.checked;
+        });
         cardContainer.appendChild(p);
         cardInfoContainer.appendChild(cardContainer);
     });

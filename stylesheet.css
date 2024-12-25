@@ -1,7 +1,12 @@
 body {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     font-family: sans-serif;
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: 1.2rem;
+
+    height: 100dvh;
+    margin: 0px;
 }
 p {
     margin-top: 0px;
@@ -10,39 +15,56 @@ p {
 button {
     padding: 0.5rem 0.8rem;
     background: none;
-    border: 1px solid #000;
+    border: 0.2rem solid #000;
     border-radius: 2rem;
+    color: black;
+    touch-action: manipulation; /* prevent double-tap zooming on iOS */
 }
 
 #cardInfo {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+    padding: 0px 1rem;
+}
+.cardContainer {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
 }
 .cardContainer p {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     vertical-align: middle;
+    text-align: left;
 }
 .cardContainer input[type=checkbox] {
-    height: clamp(1.2rem, 4vw, 2rem);
-    width: clamp(1.2rem, 4vw, 2rem);
+    min-height: 2rem;
+    min-width: 2rem;
     vertical-align: middle;
-    margin-right: clamp(0.6rem, 2vw, 1rem);
+    margin-right: 0.5rem;
 }
 .cardContainer input[type="checkbox"]:before {
-    width: clamp(1.2rem, 4vw, 2rem);
-    height: clamp(1.2rem, 4vw, 2rem);
+    min-width: 2rem;
+    min-height: 2rem;
 }
 .cardContainer input[type="checkbox"]:after {
-    top: -clamp(1.2rem, 4vw, 2rem);
-    width: clamp(1.2rem, 4vw, 2rem);
-    height: clamp(1.2rem, 4vw, 2rem);
+    top: -2rem;
+    min-width: 2rem;
+    min-height: 2rem;
 }
 
 #deckNavigation {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
 }
 #pageNumbers {
     margin-left: 1.5rem;
@@ -51,7 +73,7 @@ button {
     align-items: center;
 }
 .pageButton {
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: 2rem;
     border: none;
 }
 
@@ -59,7 +81,7 @@ button {
     font-weight: bold;
     display: flex;
     align-items: center;
-    font-size: clamp(0.6rem, 2vw, 1rem);
+    font-size: 1.3rem;
     justify-content: center;
 }
 
@@ -67,6 +89,7 @@ button {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 #showHideButton i {
     margin-right: 0.5rem;

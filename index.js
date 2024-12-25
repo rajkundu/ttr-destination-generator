@@ -393,7 +393,7 @@ function showHideButtonCB(event) {
     if (event != null && event.target == showHideButton) {
         cardInfoVisible = !cardInfoVisible;
     }
-    showHideButton.innerText = cardInfoVisible ? "Hide" : "Show";
+    showHideButton.innerText = cardInfoVisible ? "Hide Cards" : "Show Cards";
     cardInfoContainer.style.visibility = cardInfoVisible ? "visible" : "hidden";
 }
 
